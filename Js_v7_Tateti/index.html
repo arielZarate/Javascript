@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Document</title>
+    <style type="text/css">
+        .campo {
+            width: 100px;
+            height: 100px;
+            background-color: #aaa;
+            vertical-align: text-bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div styles="center">
+        <h1>&iexcl;Gato!</h1>
+
+        <div>
+            <button class="campo" id="c1" onclick="cambiaTurno('c1')"></button
+        ><button class="campo" id="c2" onclick="cambiaTurno('c2')"></button
+        ><button class="campo" id="c3" onclick="cambiaTurno('c3')"></button
+        ><br />
+        <button class="campo" id="c4" onclick="cambiaTurno('c4')"></button
+        ><button class="campo" id="c5" onclick="cambiaTurno('c5')"></button
+        ><button class="campo" id="c6" onclick="cambiaTurno('c6')"></button
+        ><br />
+        <button class="campo" id="c7" onclick="cambiaTurno('c7')"></button
+        ><button class="campo" id="c8" onclick="cambiaTurno('c8')"></button
+        ><button class="campo" id="c9" onclick="cambiaTurno('c9')"></button>
+        </div>
+        <br />
+        <br />
+        <button onclick="reiniciar(false);" style="width: 20%">Reiniciar</button
+      ><br />
+      <br />
+      <span id="turno">Turno: O</span><br /><br />
+      <span id="ganador">Ganador:</span>
+    </div>
+
+    <!-- script -->
+    <script type="text/javascript">
+      var turno = "O";
+      var turnoz = 0;
+      function cambiaTurno(id) {
+        document.getElementById(id).innerHTML = turno;
+        document.getElementById(id).disabled = true;
+        if (turnoz > 3) comprobar(id, turno);
+
+        //cone esto alterno entrre x y o
+
+        turno = turno == "O" ? "X" : "O";
+        document.getElementById("turno").innerHTML = "Turno: " + turno;
+        turnoz++;
+      }
+
+      function reiniciar(estado) {
+        turno = "O";
+        turnoz = 0;
+        document.getElementById("turno").innerHTML = "Turno: " + turno;
+        if (!estado) document.getElementById("ganador").innerHTML = "";
+        for (var i = 1; i <= 9; i++) {
+          document.getElementById("c" + i).disabled = estado;
+          if (!estado) document.getElementById("c" + i).innerHTML = "";
+        }
+      }
+
+      function comprobar(id, val) {
+        var c1 = document.getElementById("c1").innerHTML;
+        var c2 = document.getElementById("c2").innerHTML;
+        var c3 = document.getElementById("c3").innerHTML;
+        var c4 = document.getElementById("c4").innerHTML;
+        var c5 = document.getElementById("c5").innerHTML;
+        var c6 = document.getElementById("c6").innerHTML;
+        var c7 = document.getElementById("c7").innerHTML;
+        var c8 = document.getElementById("c8").innerHTML;
+        var c9 = document.getElementById("c9").innerHTML;
+
+        if (
+          (c1 == val && c2 == val && c3 == val) ||
+          (c4 == val && c5 == val && c6 == val) ||
+          (c7 == val && c8 == val && c9 == val)
+        ) {
+          document.getElementById("ganador").innerHTML =
+            "El ganador es: " + val;
+          reiniciar(true);
+        } else if (
+          (c1 == val && c4 == val && c7 == val) ||
+          (c2 == val && c5 == val && c8 == val) ||
+          (c3 == val && c6 == val && c7 == val)
+        ) {
+          document.getElementById("ganador").innerHTML =
+            "El ganador es: " + val;
+          reiniciar(true);
+        } else if (
+          (c1 == val && c5 == val && c9 == val) ||
+          (c3 == val && c5 == val && c7 == val)
+        ) {
+          document.getElementById("ganador").innerHTML =
+            "El ganador es: " + val;
+          reiniciar(true);
+        }
+      }
+    </script>
+  </body>
+</html>
