@@ -1,4 +1,4 @@
-// En estas primeras 6 preguntas, reemplaza `null` por la respuesta
+// /En estas primeras 6 preguntas, reemplaza `null` por la respuesta
 
 // Crea una variable "string", puede contener lo que quieras:
 const nuevaString = "Hola Mundo";
@@ -255,17 +255,17 @@ function esVocal(letra) {
     }
 
     /*  if (letra.length > 1) return "Dato incorrecto";
-                      else if (
-                          letra === "a" ||
-                          letra === "e" ||
-                          letra === "i" ||
-                          letra === "o" ||
-                          letra === "u"
-                      )
-                          return "Es vocal";
-                      else {
-                          return "Dato incorrecto";
-                      } */
+                        else if (
+                            letra === "a" ||
+                            letra === "e" ||
+                            letra === "i" ||
+                            letra === "o" ||
+                            letra === "u"
+                        )
+                            return "Es vocal";
+                        else {
+                            return "Dato incorrecto";
+                        } */
 }
 
 // No modificar nada debajo de esta línea
