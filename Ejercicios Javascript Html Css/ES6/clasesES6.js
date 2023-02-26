@@ -1,8 +1,10 @@
 class Persona {
+    //constructor
     constructor(nombre, apellido) {
         (this.nombre = nombre), (this.apellido = apellido);
     }
 
+    //metodo saludar dentro de la clase
     saludar() {
         console.log("Hola!" + this.nombre);
     }
@@ -12,6 +14,7 @@ class Persona {
 //toni.saludar();
 
 //ahora aplicamos herencia
+
 class Empleado extends Persona {
     constructor(nombre, apellido, empleo, sueldo) {
         super(nombre, apellido);
@@ -21,4 +24,5 @@ class Empleado extends Persona {
 }
 
 var toni = new Empleado("Toni", "Tralice", "Profesor", 100);
+
 toni.saludar();

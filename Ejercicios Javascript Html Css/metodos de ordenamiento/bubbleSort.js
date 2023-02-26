@@ -17,37 +17,39 @@ function bubbleSort(array) {
 
     //[5,15,5,2]
     /*   if (array[i] > array[i + 1]) {
-                                                                                                                                                          let aux = array[i];
-                                                                                                                                                          array[i] = array[i + 1];
-                                                                                                                                                          array[i + 1] = aux;
-                                                                                                                                                      } */
+                                                                                                                                                                            let aux = array[i];
+                                                                                                                                                                            array[i] = array[i + 1];
+                                                                                                                                                                            array[i + 1] = aux;
+                                                                                                                                                                        } */
 
     for (let i = 0; i < array.length - 1; i++) {
-        console.log(
-            "en el 1er for el i es: ",
-            i,
-            " y recorre el array.length -1 : ",
-            array.length - 1
-        );
+        /* console.log(
+                                                "en el 1er for el i es: ",
+                                                i,
+                                                " y recorre el array.length -1 : ",
+                                                array.length - 1
+                                            ); */
         for (let j = i + 1; j < array.length; j++) {
-            console.log(
-                "en el 2do for j= i+1 es: ",
-                j,
-                " y recorre el array.length : ",
-                array.length
-            );
-
+            console.log(`pregunta si ${array[i]} > ${array[j]} `);
             if (array[i] > array[j]) {
-                console.log("");
-                console.log("pregunta si ", array[i], ">", array[j]);
+                // console.log("");
+
+                console.log(`guardo el valor de ${array[i]} en una var aux`);
                 let aux = array[i];
+                console.log("array[j] es ", array[j], "y se la asigno a array[i]");
                 array[i] = array[j];
+                console.log(
+                    "ahora a array[j] le meto lo que esta en aux , que es ",
+                    aux
+                );
                 array[j] = aux;
 
-                console.log("");
-                console.log("orden :", array);
+                // console.log("");
+                //console.log("orden :", array);
             }
         }
     }
     return array;
 }
+
+console.log(bubbleSort([32, 56, 88, -1, 5, 0, 45]));

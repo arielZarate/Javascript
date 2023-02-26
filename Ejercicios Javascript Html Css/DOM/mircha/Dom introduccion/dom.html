@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+
+    <!-- link externo js -->
+    <script src="./dom.js"></script>
+</head>
+
+<body>
+    <h2>Temario gral</h2>
+
+    <h3>Dom:document object model</h3>
+    <h3>Bom: browser object model</h3>
+    <h3>Cssom:Css object model</h3>
+    <h3>web Apis</h3>
+    <ul>
+        <li>Eventos</li>
+        <li>Forms</li>
+        <li>Ajax-Fetch</li>
+        <li>History</li>
+        <li>Web Storage</li>
+        <li>Geolocalizacion</li>
+        <li>Drag & Drop</li>
+        <li>Indexed Db</li>
+        <li>Canvas</li>
+        <li>etc</li>
+    </ul>
+
+    <hr />
+    <hr />
+
+    <h3>Formas de acceder al html desde el dom</h3>
+
+    <ul id="lista">
+        <li>console.log(window);</li>
+        <li>console.log(window.document);</li>
+        <li>console.log(document);</li>
+        <li>console.log(document.body);</li>
+        <li>console.log(document.documentElement);</li>
+        <li>console.log(document.doctype);</li>
+        <li>console.log(document.charset);</li>
+        <li>console.log(document.title);</li>
+        <li>console.log(document.links);</li>
+        <li>console.log(document.links);</li>
+        <li>console.log(document.images);</li>
+        <li>console.log(document.forms);</li>
+
+        <li>console.log(document.styleSheets);</li>
+        <li>console.log(document.scripts);</li>
+        <li>
+            console.log(); setTimeout(() => { console.log(document.getSelection().toString()); }, 3000);
+        </li>
+        <li>
+            document.write("
+            <h2>Hola mundo</h2>
+            ");
+        </li>
+    </ul>
+
+    <hr />
+
+    <h3>Manejo de Selectores</h3>
+
+    <p id="parrafo">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum mollitia eius aliquid adipisci rem possimus asperiores corrupti. Harum, eveniet minus doloribus culpa nesciunt dicta soluta eos natus, autem iusto voluptatem. Cumque voluptate dolorum pariatur
+        quis, quia sunt doloribus at dolor? Dolore veritatis maxime iure explicabo cum nobis quos laudantium quaerat, ratione sunt facilis dolorum. Ratione nam eveniet porro rem doloribus. Deleniti nostrum ratione earum repudiandae eaque itaque asperiores,
+        rerum ducimus laborum? Minima laudantium in dolor aliquam, explicabo at laboriosam repellendus amet quam impedit esse laborum, cum quis deserunt? Ea, ad?
+    </p>
+
+    <!-- barra de navegacion -->
+
+    <nav id="menu">
+        <ul>
+            <li>
+                <a href="http://">seccion1</a>
+            </li>
+            <li>
+                <a href="http://">seccion2</a>
+            </li>
+            <li>
+                <a href="http://">seccion3</a>
+            </li>
+            <li>
+                <a href="http://">seccion4</a>
+            </li>
+            <li>
+                <a href="http://">seccion5</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- fin del nav -->
+
+    <p>=========================================</p>
+    <!-- input type texy -->
+    <input type="text" name="nombre" placeholder="Nombre" />
+    <a class="link-dom" href="dom.html">Dom</a>
+
+    <p>===============================================</p>
+
+    <section class="cards">
+        <figure class="card">
+            <!-- dentro del figure -->
+            <img src="http://placeimg.com/200/200/tech" alt="tech" />
+
+            <!-- inicio figcaption  -->
+            <!-- no se bien parav que sirve -->
+            <figcaption>Tech</figcaption>
+        </figure>
+
+        <figure class="card">
+            <!-- dentro del figure -->
+            <img src="http://placeimg.com/200/200/animals" alt="animal" />
+
+            <!-- inicio figcaption  -->
+            <!-- no se bien parav que sirve -->
+            <figcaption>Animals</figcaption>
+        </figure>
+        <figure class="card">
+            <!-- dentro del figure -->
+            <img src="http://placeimg.com/200/200/people" alt="people" />
+
+            <!-- inicio figcaption  -->
+            <!-- no se bien parav que sirve -->
+            <figcaption>People</figcaption>
+        </figure>
+        <figure class="card">
+            <!-- dentro del figure -->
+            <img src="http://placeimg.com/200/200/arch" alt="arch" />
+
+            <!-- inicio figcaption  -->
+            <!-- no se bien parav que sirve -->
+            <figcaption>Archs</figcaption>
+        </figure>
+        <figure class="card">
+            <!-- dentro del figure -->
+            <img src="http://placeimg.com/200/200/tech" alt="nature" />
+
+            <!-- inicio figcaption  -->
+            <!-- no se bien parav que sirve -->
+            <figcaption>Nature</figcaption>
+        </figure>
+    </section>
+</body>
+
+</html>
