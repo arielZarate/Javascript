@@ -1,0 +1,70 @@
+.notification {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+  }
+  
+  .notification.success {
+    background-color: #34a853;
+    color: #fff;
+  }
+  
+  .notification.warning {
+    background-color: #fbbc05;
+    color: #333;
+  }
+  
+  .notification.error {
+    background-color: #ea4335;
+    color: #fff;
+  }
+  
+  .notification.info {
+    background-color: #1a73e8;
+    color: #fff;
+  }
+  
+  .notification span:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 20px;
+  }
+  
+  .notification.success span:first-child {
+    color: #fff;
+  }
+  
+  .notification.warning span:first-child {
+    color: #333;
+  }
+  
+  .notification.error span:first-child {
+    color: #fff;
+  }
+  
+  .notification.info span:first-child {
+    color: #fff;
+  }
+  
+  .notification button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: inherit;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .notification button:hover {
+    color: #999;
+  }
+  
