@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>API de Pokemon</title>
+</head>
+
+<body style="background-color:chocolate ;" >
+
+
+        <h1 style="text-align:center; font-weight:900;"  class="">POKEMONES</h1>
+
+
+    <div id="pokemon-cards"></div>
+
+    <script>
+        fetch('https://pokeapi.co/api/v2/pokemon/')
+            .then(response => response.json())
+            .then(data => {
+                const pokemones = data.results;
+                //&referencio  el id  del div para poder mostrar
+                //getElementById 
+                //getElementByName
+                //getElementByclass
+
+                const container = document.getElementById('pokemon-cards');
+
+
+                pokemones.forEach(pokemon => {
+                    //para cada elemento creo un div que lo guardo en una constante 
+                    const pokemonCard = document.createElement('div');
+                    //luego le agrego un estilo al pokemonCard
+                    pokemonCard.classList.add('pokemon-card');
+                    
+
+                    //ahora ala card le agrego un titulo  
+                    const pokemonName = document.createElement('h2');
+                    //y a ese pokemonName con el innerText le agrego un name
+                    pokemonName.innerText = pokemon.name;
+
+
+                    //por ultimo creo una imagen y se la agrego 
+                    const pokemonImage = document.createElement('img');
+                    //al  pokemonImage le agrego la prpiedad src 
+                    pokemonImage.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png`;
+
+
+                    //agrego estas dos propiedades  al con appenChild 
+                    pokemonCard.appendChild(pokemonName);
+                    pokemonCard.appendChild(pokemonImage);
+
+
+
+                     //al contenedor le agrego cada card como hijo
+                    container.appendChild(pokemonCard);
+                });
+            });
+    </script>
+
+
+
+ <!-- estilos -->
+    <style>
+        .pokemon-card {
+            display: inline-block;
+            width: 200px;
+            height: 300px;
+            background-color: #f7f7f7;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .pokemon-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .pokemon-card img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+    </style>
+</body>
+
+</html>

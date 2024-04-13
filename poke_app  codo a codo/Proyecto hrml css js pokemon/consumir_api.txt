@@ -1,0 +1,222 @@
+archivos apartes ////////////////////////
+
+
+==========css===========
+.pokemon-card {
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.pokemon-card h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.pokemon-card img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+
+======fin=======
+
+
+
+=== pokemon.js=======
+fetch('https://pokeapi.co/api/v2/pokemon/')
+  .then(response => response.json())
+  .then(data => {
+    const pokemonData = data.results;
+    const pokemonCardsContainer = document.getElementById('pokemon-cards');
+
+    pokemonData.forEach(pokemon => {
+      const pokemonCard = document.createElement('div');
+      pokemonCard.classList.add('pokemon-card');
+
+      const pokemonName = document.createElement('h2');
+      pokemonName.innerText = pokemon.name;
+
+      const pokemonImage = document.createElement('img');
+      pokemonImage.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png`;
+
+      pokemonCard.appendChild(pokemonName);
+      pokemonCard.appendChild(pokemonImage);
+
+      pokemonCardsContainer.appendChild(pokemonCard);
+    });
+  });
+
+==========fin===========
+
+===html========
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API de Pokemon</title>
+    <script src="pokemon.js"></script>
+    <link rel="stylesheet" href="pokemon.css">
+  </head>
+  <body>
+    <div id="pokemon-cards"></div>
+  </body>
+</html>
+
+==========================================================================================================
+==========================================================================================================
+==========================================================================================================
+==========================================================================================================
+============================= todo el codigo junto en un html    =============================================================================
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API de Pokemon</title>
+  </head>
+  <body>
+    <div id="pokemon-cards"></div>
+
+    <script>
+      fetch('https://pokeapi.co/api/v2/pokemon/')
+        .then(response => response.json())
+        .then(data => {
+          const pokemonData = data.results;
+          const pokemonCardsContainer = document.getElementById('pokemon-cards');
+
+          pokemonData.forEach(pokemon => {
+            const pokemonCard = document.createElement('div');
+            pokemonCard.classList.add('pokemon-card');
+
+            const pokemonName = document.createElement('h2');
+            pokemonName.innerText = pokemon.name;
+
+            const pokemonImage = document.createElement('img');
+            pokemonImage.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png`;
+
+            pokemonCard.appendChild(pokemonName);
+            pokemonCard.appendChild(pokemonImage);
+
+            pokemonCardsContainer.appendChild(pokemonCard);
+          });
+        });
+    </script>
+
+    <style>
+      .pokemon-card {
+        display: inline-block;
+        width: 200px;
+        height: 300px;
+        background-color: #f7f7f7;
+        border-radius: 5px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .pokemon-card h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .pokemon-card img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </body>
+</html>
+
+
+
+
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
+//=================================pokemon con detalle ============================================================
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pokémon List</title>
+  <style>
+    .pokemon-card {
+      border: 1px solid gray;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px gray;
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      text-align: center;
+      width: 200px;
+    }
+    .pokemon-image {
+      height: 150px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pokémon List</h1>
+  <div id="pokemon-cards"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const pokemonListUrl = "https://pokeapi.co/api/v2/pokemon/";
+
+    axios.get(pokemonListUrl)
+      .then(response => {
+        const pokemonList = response.data.results;
+        const pokemonCardsElement = document.getElementById("pokemon-cards");
+
+        // Recorre la lista de Pokemon y crea una tarjeta para cada uno
+        pokemonList.forEach(pokemon => {
+          // Crea un elemento <a> para el enlace del Pokemon
+          const pokemonLink = document.createElement("a");
+          pokemonLink.href = `pokemon-detail.html?pokemon=${pokemon.name}`;
+
+          // Crea un elemento <div> para la tarjeta del Pokemon
+          const pokemonCard = document.createElement("div");
+          pokemonCard.classList.add("pokemon-card");
+
+          // Crea un elemento <img> para la imagen del Pokemon
+          const pokemonImage = document.createElement("img");
+          pokemonImage.classList.add("pokemon-image");
+          pokemonImage.src = `https://pokeres.bastionbot.org/images/pokemon/${pokemon.url.split("/")[6]}.png`;
+          pokemonImage.alt = `${pokemon.name} image`;
+
+          // Crea un elemento <h2> para el nombre del Pokemon
+          const pokemonName = document.createElement("h2");
+          pokemonName.textContent = pokemon.name;
+
+          // Agrega la imagen y el nombre del Pokemon a la tarjeta del Pokemon
+          pokemonCard.appendChild(pokemonImage);
+          pokemonCard.appendChild(pokemonName);
+
+          // Agrega la tarjeta del Pokemon al elemento <a>
+          pokemonLink.appendChild(pokemonCard);
+
+          // Agrega el elemento <a> al contenedor de tarjetas de Pokemon
+          pokemonCardsElement.appendChild(pokemonLink);
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
