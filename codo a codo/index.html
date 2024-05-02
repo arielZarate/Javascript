@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" type="text/css" rel="stylesheet" />
+    <title>api mascotas</title>
+  </head>
+  <body>
+    <!-- Navegación -->
+    <header>
+      <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <section id="home">
+      <h1>Esta es la api de mascotas</h1>
+      <p>Bienvenido a la página de inicio</p>
+      <div id="petList"></div>
+    </section>
+
+    <section id="about">
+      <h1>About Page</h1>
+      <p>Acerca de esta SPA</p>
+    </section>
+
+    <section id="contact">
+      <h1>Contact Page</h1>
+      <p>Contáctanos</p>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>

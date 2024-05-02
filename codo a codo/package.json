@@ -1,0 +1,15 @@
+{
+  "name": "codo-a-codo",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "dev": "json-server --watch data/data.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "json-server": "^1.0.0-alpha.23"
+  }
+}
