@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consumer Api</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <h1 class="text-lg text-blue-500 text-center font-bold my-5">
+      REST COUNTRIES
+    </h1>
+
+    <div class="container flex justify-end mx-auto">
+      <select
+        id="categories"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-48 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      >
+        <option selected value="Elije un pais">Elije un pais</option>
+      </select>
+    </div>
+
+    <div class="container mx-auto min-h-screen">
+      <div id="country-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

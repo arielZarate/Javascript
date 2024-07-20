@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form id="form">
+      <input type="text" id="idName" name="name" placeholder="nombre" />
+
+      <button id="btnEnviar" type="submit">Enviar</button>
+
+      <br />
+      <button id="clearbd">Borrar BD</button>
+    </form>
+
+    <div>
+      <h1>Listado</h1>
+      <div id="listado"></div>
+    </div>
+
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        let nombres = [];
+
+        // || JSON.parse(localStorage.getItem("nombres_array"));
+
+        //inputs
+        let texto = document.getElementById("idName");
+        let boton = document.getElementById("btnEnviar");
+        let listado = document.getElementById("listado");
+        let btn_clear = document.getElementById("clearbd");
+
+        //funciones
+        function Agregar(e) {
+          e.preventDefault();
+
+          if (texto.value != "") {
+            nombres.push(texto.value);
+
+            localStorage.nombres_array = JSON.stringify(nombres);
+
+            //mostrar tareas
+            console.log(nombres);
+            texto.value = "";
+            mostrar();
+          } else {
+            alert("Debes ingresar un nombre");
+          }
+        }
+
+        function mostrar() {
+          //listado.innerHTML += texto.value + "<br/>";
+
+          listado.innerHTML = "";
+
+          for (let nombre of nombres) {
+            listado.innerHTML += `<p>${nombre}</p>`;
+          }
+        }
+
+        boton.addEventListener("click", Agregar);
+
+        btn_clear.addEventListener("click", function () {
+          localStorage.removeItem("nombres_array");
+          nombres = [];
+          listado.innerHTML = "";
+        });
+
+        //cargar los datos al cargar la página
+
+        function listadoNombres() {
+          //comprobar si hay datos en el local storage
+          if (localStorage.getItem("nombres_array")) {
+            //parsear los datos
+            nombres = JSON.parse(localStorage.getItem("nombres_array"));
+
+            //mostrar los datos
+            mostrar();
+          } else {
+            //si no hay datos, mostrar un mensaje
+            listado.innerHTML = "<p>No hay datos en el local storage</p>";
+          }
+        }
+
+        listadoNombres(); //llamar la función al cargar la página
+
+        //fin
+      });
+    </script>
+  </body>
+</html>
