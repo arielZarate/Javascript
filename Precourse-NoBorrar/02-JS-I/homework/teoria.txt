@@ -1,0 +1,25 @@
+En un archivo de texto separado que debes crear, escribe explicaciones de los siguientes conceptos como si se lo estuvieras explicando a un niño de 12 años. Hacer esto te ayudará a descubrir rápidamente cualquier agujero en tu comprensión.
+Variables
+Strings
+Funciones (argumentos, return)
+Declaraciones if
+Valores booleanos (true, false)
+
+==================REPUESTAS=======================================
+
+1) Variable: espacio de memoria reservado que se utiliza para guardar algun dato o valor.
+=============================================================
+2) String : es un tipo de dato de los lenguajes de programacion, es un conjunto de caracteres o una cadena de caracteres.
+
+===================================================================
+Funciones: son como cajas que tienen cierto codigo ejecutable que devolvera un resultado 
+
+esta recibe unos argumnetos o parametros ,hace alguna operacion con ellos y devulve el resultado , ejemplo una suma.
+
+================================================================
+if: (si) es una instruccion condicional , me permite evaluar una condicion si esta es verdadera sigo sino no se ejecutable
+
+========================================================================================
+booleanos:son valores logicos que devulven 2 resultados , o verdadero o falso
+ sirven para obtener validaciones en operaciones y otras mas
+
