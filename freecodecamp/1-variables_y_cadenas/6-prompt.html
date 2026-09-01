@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt </title>
+</head>
+<body>
+    
+
+    <button id="mostrar-prompt">mostrar saludo</button>
+
+
+    <p id="mostrar-saludo"></p>
+
+    <script>
+
+            const ejecutarMensaje=()=>{
+                 document.getElementById('mostrar-prompt').addEventListener('click', mostrarMensaje );
+                 };
+       
+           
+           function mostrarMensaje() {
+                let message= prompt("ingrese su mensaje , por favor", "Desea escribir esto");
+               console.log(message);
+                 //aca agrego ekl mensaje al parrafo mediante el id 
+                document.getElementById('mostrar-saludo').textContent=message;
+            }
+
+
+            //PRIMERO CARGA EL DOM Y LUEGO EJECUTA
+
+            /**
+             * 
+             Esta distinción es MUY importante
+
+DOMContentLoaded no significa:
+
+"No ejecutes este <script> todavía."
+
+Significa:
+
+"Cuando el DOM esté completamente construido, ejecutá esta función."
+
+Por eso, en tu ejemplo, poner el <script> al final del <body> hace que DOMContentLoaded sea innecesario, pero no incorrecto.
+            */
+            document.addEventListener("DOMContentLoaded", ejecutarMensaje);
+
+    </script>
+</body>
+</html>
